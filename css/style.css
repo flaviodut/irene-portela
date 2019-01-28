@@ -21,7 +21,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   color: #745d5d;
-  background-color: beige;
+  background-color: #f7f7ef;
 }
 
 strong {
@@ -42,7 +42,7 @@ strong {
   width: 100%;
   height: 50px;
   padding: 0 1rem;
-  background-color: #c29c9b;
+  background-color: #ae8c8b;
   box-shadow: 0 4px 8px rgba(0, 0, 0, .1)
 }
 
@@ -209,7 +209,7 @@ strong {
   width: 25vh;
   height: 25vh;
   margin-bottom: 2rem;
-  border: 5px solid #c29c9b;
+  border: 5px solid #ae8c8b;
   border-radius: 50%;
 }
 
@@ -274,7 +274,7 @@ strong {
 
   .index a:hover,
   .index a:focus {
-    background-color: rgba(255, 255, 255, .5);
+    color: #685252;
   }
 }
 
@@ -420,7 +420,7 @@ strong {
 }
 
 table.fixedHeader-floating {
-  background-color: beige;
+  background-color: #f7f7ef;
 }
 
 .planilha .dataTables_wrapper {
@@ -440,7 +440,7 @@ table.fixedHeader-floating {
   width: 100%;
   height: 40px;
   text-align: left;
-  background-color: #c29c9b;
+  background-color: #ae8c8b;
 }
 
 @media (min-width: 769px) {
