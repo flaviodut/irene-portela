@@ -1,7 +1,7 @@
 (function () {
-  const planilha = fetch('data/planilha.json');
+  const catalogo = fetch('data/catalogo.json');
 
-  planilha
+  catalogo
     .then(data => data.json())
     .then(dataJson => {
       feedTable(dataJson);
@@ -15,34 +15,27 @@
   }
 
   function feedTable(rows) {
-    const tableBody = document.querySelector('#table tbody');
+    const tableReunidos = document.querySelector('#catalogo_reunidos tbody');
+    const tableOutros = document.querySelector('#catalogo_outros tbody');
 
     rows.forEach((row) => {
       const tableRow = document.createElement('tr');
+      const comprado = Number(row['Comprado']);
 
       tableRow.innerHTML = `
-        <td>${row['Data'] !== '' ? row['Data'] : '-'}</td>
-        <td>${row['Publicação'] !== '' ? row['Publicação'] : '-'}</td>
-        <td>${row['UF'] !== '' ? row['UF'] : '-'}</td>
-        <td>${row['Tipo'] !== '' ? row['Tipo'] : '-'}</td>
-        <td>${row['Assunto'] !== '' ? row['Assunto'] : '-'}</td>
-        <td>${row['Complemento'] !== '' ? row['Complemento'] : '-'}</td>
-        <td>${row['Localização'] !== '' ? locationCombo(row['Localização']) : '-'}</td>
-        <td>${row['Destaque'] !== '' ? `<a href="images/highlight/${row['Destaque']}" data-lightbox="${row['Destaque']}">${row['Destaque']}</a>` : '-'}</td>
-        <td>${row['Interesse'] !== '' ? row['Interesse'] : '-'}</td>
+        <td>${row['Artista'] !== '' ? row['Artista'] : '-'}</td>
+        <td>${row['Disco'] !== '' ? row['Disco'] : '-'}</td>
+        <td>${row['Ano'] !== '' ? row['Ano'] : '-'}</td>
+        <td>${row['Música'] !== '' ? row['Música'] : '-'}</td>
+        <td>${row['Formato'] !== '' ? row['Formato'] : '-'}</td>
+        <td>${row['Detalhe'] !== '' ? row['Detalhe'] : '-'}</td>
       `;
 
-      tableBody.append(tableRow);
+      if (comprado === 1)
+        tableReunidos.append(tableRow);
+      else
+        tableOutros.append((tableRow))
     })
-  }
-
-  function locationCombo(location) {
-    if (location.indexOf('Vários:') > -1) {
-      const splited = location.split('Vários: ');
-      return `<div class="location"><a href="javascript:;" class="location-label">Vários</a><span class="location-addresses">${splited[1]}</span></div>`
-    } else {
-      return location;
-    }
   }
 
   function initDataTable() {
@@ -70,14 +63,14 @@
       }
     };
     
-    $('#table').DataTable({
-      fixedHeader: {
-        header: true,
-        headerOffset: 50,
-      },
+    $('#catalogo_reunidos, #catalogo_outros').DataTable({
+      info: false,
       language: dataTable_ptBR,
       paging: false,
       responsive: true,
+      searching: false,
+      order: [[2, 'asc']]
     });
   }
 })();
+  

@@ -1,8 +1,3 @@
-/* 
-  BEIGE
-  https://www.color-hex.com/color/c29c9b
- */
-
 html, body {
   width: 100%;
   height: 100%;
@@ -22,6 +17,21 @@ body {
   line-height: 1.5;
   color: #745d5d;
   background-color: #f7f7ef;
+}
+
+a, a:active {
+  color: #000;
+}
+
+a:hover, a:focus {}
+
+a[rel="nofollow"]::after {
+  content: '';
+  display: inline-block;
+  width: .875rem;
+  height: .875rem;
+  margin-left: .25rem;
+  background: transparent url(../images/icons/external-link-alt.svg) no-repeat center bottom;
 }
 
 strong {
@@ -308,7 +318,7 @@ strong {
 
 @media (min-width: 769px) {
   .sobre .content {
-    max-width: 50vw;
+    max-width: 55vw;
     padding: 2rem;
   }
 }
@@ -328,7 +338,7 @@ strong {
     position: fixed;
     top: 50px;
     right: 0;
-    max-width: 48vw;
+    max-width: 43vw;
   }
 }
 
@@ -354,6 +364,15 @@ strong {
 
 .sobre li {}
 
+.sobre .dataTable {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.sobre .dataTable caption {
+  font-weight: 700;
+}
+
 
 /* APRESENTAÇÃO */
 
@@ -368,10 +387,12 @@ strong {
 }
 
 .slick-slide {
+  position: relative;
   padding: 1rem;
+  overflow: hidden;
 }
 
-.slick-slide div > div {
+.slick-slide > div > div {
   display: flex !important;
   flex-flow: column wrap;
   justify-content: center;
@@ -397,15 +418,51 @@ strong {
 
 /* SLIDER CONTENT */
 
-.apresentacao audio,
-.apresentacao video {
-  margin-top: 2rem;
-}
-
 .apresentacao img,
 .apresentacao figure {
   max-width: 100%;
   height: auto;
+}
+
+.apresentacao .audio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.apresentacao .audio audio {
+  position: absolute;
+  top: -54px;
+  left: 0;
+  transition: top 300ms ease-in-out;
+}
+
+.apresentacao .audio::before {
+  content: '';
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: #fff url(../images/icons/volume-up.svg) no-repeat center / .875rem .875rem;
+  border: 2px solid #ae8c8b;
+  border-radius: 50% 50%;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.apresentacao .audio:hover audio {
+  top: 0 !important;
+}
+
+.apresentacao .audio:hover::before {
+  opacity: 0;
 }
 
 
@@ -545,8 +602,9 @@ table.fixedHeader-floating {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1010;
   display: block;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 1) url(../libs/lightbox/images/loading.gif) no-repeat center;
+  background: rgba(255, 255, 255, .9) url(../libs/lightbox/images/loading.gif) no-repeat center;
 }

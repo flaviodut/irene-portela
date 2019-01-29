@@ -12,10 +12,13 @@
     <meta itemprop="image" content="https://flaviodutra.com.br/meu-santo-e-forte/images/irene-portela-camarim-600x315.png">
 
     <link rel="stylesheet" type="text/css" href="libs/resetcss/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="libs/DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="libs/lightbox/css/lightbox.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
   </head>
 
   <body class="sobre">
+    <span id="loading"></span>
     <header class="header">
       <a href="index.html" title="Home" class="title">MEU SANTO É FORTE</a>
       <nav class="navigation">
@@ -37,7 +40,7 @@
     </header>
     <main class="content">
       <h1>Sobre</h1>
-      <p>Uma homenagem à cantora, compositora e violonista, Irene Portela, maranhense de Codó, nascida em 29/06/1945 e falecida em 29/06/1999.</p>
+      <p>Uma homenagem à cantora, compositora e violonista, <strong>Irene Portela</strong>, maranhense de Codó, nascida em 29/06/1945 e falecida em 29/06/1999.</p>
 
       <figure>
         <img src="images/irene-portela-camarim.jpg" alt="Irene Portela">
@@ -47,10 +50,34 @@
       <h2>O projeto</h2>
       <p>A ideia desse projeto nasceu da vontade que eu tinha de homenagear a mãe, Irene, e presentear a filha, Iris Li. O início da pesquisa se deu em julho de 2018 e foi concluída em janeiro de 2019, com longos hiatos ao longo do caminho. Nesta primeira etapa, foram pesquisados os acervos online da <a href="//memoria.bn.br/" title="Hemeroteca da Biblioteca Nacional" target="_blank" rel="nofollow">Hemeroteca da Biblioteca Nacional</a> e o <a href="//acervo.folha.com.br/" title="Acervo da Folha de S. Paulo" target="_blank" rel="nofollow">Acervo da Folha de S. Paulo</a>. O resultado da pesquisa apresenta um panorâma geral sobre a evolução da carreira de Irene, clarificando e organizando informações que com o passar do tempo vão se perdendo no espaço-tempo.</p>
       <p>Somando ao conteúdo de recortes de jornais, faz parte do projeto reunir LPs lançados que conta com a participação da Irene; seja uma coletânea, a participação cantando uma música no LP de um outro artista ou outros cantores (muitas vezes amigos) que interpretaram músicas da Irene.</p>
-      <p>Foram reunidos os seguintes discos:</p>
-      <ul>
-        <li>(Pegar lista do Keep antes de entregar)</li>
-      </ul>
+      <table id="catalogo_reunidos" class="stripe hover row-border compact">
+        <caption>Discos reunidos e presenteados</caption>
+        <thead>
+          <tr>
+            <th data-priority="2">Artista</th>
+            <th data-priority="2">Disco</th>
+            <th data-priority="2">Ano</th>
+            <th>Música</th>
+            <th>Formato</th>
+            <th>Detalhe</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <table id="catalogo_outros" class="stripe hover row-border compact">
+        <caption>Outros discos</caption>
+        <thead>
+          <tr>
+            <th data-priority="2">Artista</th>
+            <th data-priority="2">Disco</th>
+            <th data-priority="2">Ano</th>
+            <th>Música</th>
+            <th>Formato</th>
+            <th>Detalhe</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
       <p>A Irene lançou em 1979 o LP 'Rumo Norte', com composições próprias e do conterrâneo João do Vale, pelo selo Discos Marcus Pereira. Ele foi relançado posteriormente em CD, nos anos 90, com algumas faixas extras. Porém, como esse já é um álbum muito difundido na família, não foi incluído na box.</p>
 
       <h2>Apresentação do conteúdo</h2>
@@ -64,5 +91,10 @@
         <li>Pesquisar em outros acervos online de jornais brasileiros</li>
       </ul>
     </main>
+
+    <script type="text/javascript" src="libs/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="libs/DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="libs/lightbox/js/lightbox.min.js"></script>
+    <script src="js/sobre.js"></script>
   </body>
 </html>
