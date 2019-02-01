@@ -28,7 +28,7 @@
         <td>${row['Assunto'] !== '' ? row['Assunto'] : '-'}</td>
         <td>${row['Complemento'] !== '' ? row['Complemento'] : '-'}</td>
         <td>${row['Localização'] !== '' ? locationCombo(row['Localização']) : '-'}</td>
-        <td>${row['Destaque'] !== '' ? `<a href="images/highlight/${row['Destaque']}" data-lightbox="${row['Destaque']}">${row['Destaque']}</a>` : '-'}</td>
+        <td>${row['Recorte'] !== '' ? `<a href="images/highlight/${row['Recorte']}" data-lightbox="${row['Recorte']}">${row['Recorte']}</a>` : '-'}</td>
         <td>${row['Interesse'] !== '' ? row['Interesse'] : '-'}</td>
       `;
 

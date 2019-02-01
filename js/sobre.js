@@ -20,7 +20,6 @@
 
     rows.forEach((row) => {
       const tableRow = document.createElement('tr');
-      const comprado = Number(row['Comprado']);
 
       tableRow.innerHTML = `
         <td>${row['Artista'] !== '' ? row['Artista'] : '-'}</td>
@@ -31,7 +30,7 @@
         <td>${row['Detalhe'] !== '' ? row['Detalhe'] : '-'}</td>
       `;
 
-      if (comprado === 1)
+      if (row['Comprar'] === 'Comprado')
         tableReunidos.append(tableRow);
       else
         tableOutros.append((tableRow))
