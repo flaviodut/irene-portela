@@ -34,7 +34,7 @@ a[rel="nofollow"]::after {
   background: transparent url(../images/icons/external-link-alt.svg) no-repeat center bottom;
 }
 
-strong {
+strong, b {
   font-weight: 700;
 }
 
