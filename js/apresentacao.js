@@ -1,17 +1,13 @@
 (function () {
   initSlick();
-  audioTopPos();
 
   function initSlick() {
-    const slider = $('.slider');
-  
-    slider.slick({
-      accessibility: true,
-      arrows: false,
-      dots: true,
-      infinite: false,
-      mobileFirst: true,
-      lazyLoad: 'ondemand',
+    const slider = $('#slider');
+    const indicatorCurrent = $('#indicatorCurrent');
+    const indicatorTotal = $('#indicatorTotal');
+    
+    slider.on('init', function(event, slick) {
+      indicatorTotal.text($(slick.$slides).length);
     });
   
     slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
@@ -22,17 +18,18 @@
         }
       }
     });
-  }
 
-  function audioTopPos() {
-    const tags = document.querySelectorAll('audio');
+    slider.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+      indicatorCurrent.text(currentSlide + 1);
+    });
 
-    if (tags.length > 0) {
-      const tagHeight = tags[0].offsetHeight;
-
-      tags.forEach(tag => {
-        tag.style.top = -tagHeight;
-      })
-    }
+    slider.slick({
+      accessibility: true,
+      arrows: true,
+      dots: false,
+      infinite: false,
+      mobileFirst: true,
+      lazyLoad: 'ondemand',
+    });
   }
 })();

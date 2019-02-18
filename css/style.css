@@ -405,11 +405,23 @@ strong, b {
 }
 
 .slick-prev {
-  left: 1rem;
+  left: 0;
 }
 
 .slick-next {
-  right: 1rem;
+  right: 0;
+}
+
+.slick-prev,
+.slick-next {
+  width: 1.875rem;
+  height: 6.25rem;
+  z-index: 100;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #ae8c8b;
 }
 
 .slick-dotted.slick-slider {
@@ -418,6 +430,33 @@ strong, b {
 
 .slick-dots {
   bottom: 0;
+}
+
+/* PAGE INDICATOR */
+
+.indicator {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  line-height: 1;
+}
+
+.indicator-wrapper {
+  padding: 0 .5rem;
+  background-color: #ae8c8b;
+  border-radius: 3px 3px 0 0;
+}
+
+.indicator-wrapper span {
+  font-size: .75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 /* SLIDER CONTENT */
@@ -439,14 +478,7 @@ strong, b {
   text-align: center;
 }
 
-.apresentacao .audio audio {
-  position: absolute;
-  top: -54px;
-  left: 0;
-  transition: top 300ms ease-in-out;
-}
-
-.apresentacao .audio::before {
+.apresentacao .audio-icon {
   content: '';
   position: absolute;
   top: .5rem;
@@ -461,12 +493,33 @@ strong, b {
   transition: opacity 300ms ease-in-out;
 }
 
-.apresentacao .audio:hover audio {
-  top: 0 !important;
+.apresentacao .audio-inner {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  transition: top 300ms ease-in-out;
 }
 
-.apresentacao .audio:hover::before {
+.apresentacao .audio-info {
+  font-size: .750rem;
+}
+
+.apresentacao .audio-artist {
+  font-weight: 700;
+}
+
+.apresentacao .audio-music::before {
+  content: '-';
+  display: inline-block;
+  margin: 0 .25rem;
+}
+
+.apresentacao .audio:hover .audio-icon {
   opacity: 0;
+}
+
+.apresentacao .audio:hover .audio-inner {
+  top: 0 !important;
 }
 
 
