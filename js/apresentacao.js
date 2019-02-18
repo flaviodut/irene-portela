@@ -9,7 +9,9 @@
       accessibility: true,
       arrows: false,
       dots: true,
+      infinite: false,
       mobileFirst: true,
+      lazyLoad: 'ondemand',
     });
   
     slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
