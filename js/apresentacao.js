@@ -1,13 +1,22 @@
 (function () {
   initSlick();
 
+  function hideLoading() {
+    document.querySelector('#loading').style.display = 'none';
+    document.querySelector('#slider').style.display = 'block';
+  }
+
   function initSlick() {
     const slider = $('#slider');
+    let list;
     const indicatorCurrent = $('#indicatorCurrent');
     const indicatorTotal = $('#indicatorTotal');
     
     slider.on('init', function(event, slick) {
       indicatorTotal.text($(slick.$slides).length);
+      list = slider.find('.slick-list');
+      adjustImageToViewport();
+      hideLoading();
     });
   
     slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
@@ -25,11 +34,35 @@
 
     slider.slick({
       accessibility: true,
-      arrows: true,
+      arrows: false,
       dots: false,
       infinite: false,
       mobileFirst: true,
       lazyLoad: 'ondemand',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: true,
+          }
+        }
+      ]
     });
+
+    function adjustImageToViewport() {
+      const slide = list.find('.slick-slide')[0];
+      const img = list.find('.slick-slide img')[0];
+
+      list.removeClass('viewportWidth');
+      list.removeClass('viewportHeight');
+      
+      if (img.offsetHeight >= slide.offsetHeight) {
+        list.addClass('viewportHeight');
+      } else {
+        list.addClass('viewportWidth');
+      }
+    }
+
+    window.addEventListener('resize', adjustImageToViewport, false);
   }
 })();
