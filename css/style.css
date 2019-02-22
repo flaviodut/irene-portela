@@ -481,7 +481,7 @@ strong, b {
 .apresentacao .audio {
   position: absolute;
   top: 0;
-  left: 0;
+  left: .5rem;
   display: flex;
   flex-direction: column;
   width: auto;
@@ -512,7 +512,12 @@ strong, b {
 }
 
 .apresentacao .audio-info {
+  margin-top: 5px;
   font-size: .750rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
 }
 
 .apresentacao .audio-artist {
