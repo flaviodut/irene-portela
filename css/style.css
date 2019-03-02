@@ -16,7 +16,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   color: #745d5d;
-  background-color: #f7f7ef;
+  background: #f7f7ef url(../images/rumo-norte-bg.png) center / cover;
 }
 
 a, a:active {
@@ -272,6 +272,7 @@ strong, b {
   color: #745d5d;
   text-align: center;
   text-decoration: none;
+  background-color: rgba(255, 255, 255, .5);
 }
 
 @media (min-width: 769px) {
@@ -288,6 +289,7 @@ strong, b {
   .index a:hover,
   .index a:focus {
     color: #685252;
+    background-color: #fff;
     border-color: rgba(174, 140, 139, .2);
   }
 }
