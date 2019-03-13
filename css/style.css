@@ -231,6 +231,8 @@ strong, b {
 .index .perfil {
   width: 25vh;
   height: 25vh;
+  min-width: 125px;
+  min-height: 125px;
   margin-bottom: 2rem;
   border: 5px solid #ae8c8b;
   border-radius: 50%;
