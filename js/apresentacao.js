@@ -63,6 +63,7 @@
       }
     }
 
+    adjustImageToViewport();
     window.addEventListener('resize', adjustImageToViewport, false);
   }
 })();
