@@ -562,6 +562,16 @@ strong, b {
   padding-top: 50px;
 }
 
+.planilha .dataTable {
+  font-size: 1rem;
+}
+
+@media (min-width: 769px) {
+  .planilha .dataTable {
+    font-size: 1.125rem;
+  }
+}
+
 table.fixedHeader-floating {
   background-color: #f7f7ef;
 }
