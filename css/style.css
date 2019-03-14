@@ -229,13 +229,18 @@ strong, b {
 }
 
 .index .perfil {
-  width: 25vh;
-  height: 25vh;
-  min-width: 125px;
-  min-height: 125px;
+  width: 125px;
+  height: 125px;
   margin-bottom: 2rem;
   border: 5px solid #ae8c8b;
   border-radius: 50%;
+}
+
+@media (min-width: 769px) {
+  .index .perfil {
+    width: 165px;
+    height: 165px;
+  }
 }
 
 .index ul {
