@@ -203,9 +203,6 @@ strong, b {
 .index .content {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
   padding: 1rem;
   align-items: center;
   text-align: center;
@@ -231,6 +228,7 @@ strong, b {
 .index .perfil {
   width: 125px;
   height: 125px;
+  margin-top: 10vh;
   margin-bottom: 2rem;
   border: 5px solid #ae8c8b;
   border-radius: 50%;
