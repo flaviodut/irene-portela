@@ -55,8 +55,8 @@
 
       list.removeClass('viewportWidth');
       list.removeClass('viewportHeight');
-      
-      if (img.offsetHeight >= slide.offsetHeight) {
+
+      if ((img.offsetHeight + 90) >= slide.offsetHeight) {
         list.addClass('viewportHeight');
       } else {
         list.addClass('viewportWidth');
