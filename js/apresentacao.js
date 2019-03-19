@@ -66,7 +66,7 @@
       dots: false,
       infinite: false,
       mobileFirst: true,
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
       responsive: [
         {
           breakpoint: 1024,
