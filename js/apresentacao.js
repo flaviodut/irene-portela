@@ -1,21 +1,49 @@
 (function () {
-  initSlick();
 
   function hideLoading() {
     document.querySelector('#loading').style.display = 'none';
     document.querySelector('#slider').style.display = 'block';
   }
 
-  function initSlick() {
+  function adjustImageToViewport() {
+    const list = document.querySelectorAll('#slider .slick-list')[0];
+    const img = document.querySelectorAll('#slider img')[0];
+
+    list.classList.remove('viewportWidth');
+    list.classList.remove('viewportHeight');
+
+    if ((img.offsetHeight + 90) >= list.offsetHeight) {
+      list.classList.add('viewportHeight');
+    } else {
+      list.classList.add('viewportWidth');
+    }
+  }
+
+  function verifyFirstImageLoaded() {
+    try {
+      var firstImage = document.querySelectorAll('#slider img')[0];
+      
+      if (firstImage.offsetHeight === 0 || firstImage === undefined) {
+        throw new Error('Cadê a imagem?');
+      }
+
+      adjustImageToViewport();
+
+    } catch (err) {
+      setTimeout(() => {
+        verifyFirstImageLoaded();
+      }, 100);
+    }
+  }
+
+  function init() {
     const slider = $('#slider');
-    let list;
     const indicatorCurrent = $('#indicatorCurrent');
     const indicatorTotal = $('#indicatorTotal');
     
     slider.on('init', function(event, slick) {
       indicatorTotal.text($(slick.$slides).length);
       list = slider.find('.slick-list');
-      adjustImageToViewport();
       hideLoading();
     });
   
@@ -49,21 +77,9 @@
       ]
     });
 
-    function adjustImageToViewport() {
-      const slide = list.find('.slick-slide')[0];
-      const img = list.find('.slick-slide img')[0];
-
-      list.removeClass('viewportWidth');
-      list.removeClass('viewportHeight');
-
-      if ((img.offsetHeight + 90) >= slide.offsetHeight) {
-        list.addClass('viewportHeight');
-      } else {
-        list.addClass('viewportWidth');
-      }
-    }
-
-    adjustImageToViewport();
+    verifyFirstImageLoaded();
     window.addEventListener('resize', adjustImageToViewport, false);
   }
+
+  init();
 })();
