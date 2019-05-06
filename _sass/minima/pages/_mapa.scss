@@ -1,0 +1,18 @@
+.mapa {
+  padding-top: 50px;
+
+  main {
+    width: inherit;
+    height: inherit;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

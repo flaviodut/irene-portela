@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/libs/jQuery/jquery-3.4.0.min.js"><\/script>');</script>
+
+{% case page.body-class %}
+  {% when 'apresentacao' %}
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>jQuery.fn.slick || document.write('<script src="/assets/libs/Slick/slick.min.js"><\/script>');</script>
+
+    <script src="/assets/js/apresentacao.js"></script>
+  {% when 'planilha' %}
+    <script src="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/r-2.2.2/datatables.min.js"></script>
+    <script>jQuery.fn.DataTable || document.write('<script src="/assets/libs/DataTables/datatables.min.js"><\/script>');</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.0/dist/js/lightbox.min.js"></script>
+    <script>window.lightbox || document.write('<script src="/assets/libs/Lightbox/js/lightbox.min.js"><\/script>');</script>
+
+    <script src="/assets/js/planilha.js"></script>
+  {% when 'sobre' %}
+    <script src="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/r-2.2.2/datatables.min.js"></script>
+    <script>jQuery.fn.DataTable || document.write('<script src="/assets/libs/DataTables/datatables.min.js"><\/script>');</script>
+
+    <script src="/assets/js/sobre.js"></script>
+{% endcase %}

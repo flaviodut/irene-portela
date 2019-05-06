@@ -1,0 +1,28 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+  {% include head.html %}
+
+  {% if page.body-class %}
+  <body class="{{page.body-class}}">
+  {% else %}
+  <body>
+  {% endif %}
+
+    {% if page.body-class != "index" %}
+      {% include header.html %}
+    {% endif %}
+
+    <main class="content" aria-label="Content">
+      {{ content }}
+    </main>
+
+    {% include scripts.html %}
+
+  </body>
+
+</html>

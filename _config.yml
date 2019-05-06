@@ -1,0 +1,68 @@
+lang: pt-br
+title: MEU SANTO É FORTE - Irene Portela
+author: Flávio Alberto Dutra
+email: flavio.adore@gmail.com
+description: Homenagem à cantora, compositora e violonista, Irene Portela
+url: "https://ireneportela.com.br"
+image: "https://ireneportela.com.br/images/irene-portela-camarim-600x315.png"
+keywords:
+  - irene portela
+  - mpb
+  - cantora
+  - compositora
+  - violonista
+  - diretora musical
+  - intérprete
+  - teatro
+  - nordeste
+  - maranhão
+  - codó
+
+# Social
+facebook_username: flaviodutra
+twitter_username: flaviodut
+
+# Build settings
+permalink: /:year-:month-:day/:title
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
+include:
+  - _redirects
+
+# Configuration for Disqus
+# disqus:
+#   shortname: antepassados
+
+# GA
+google_analytics: UA-35055763-3
+
+# SASS configuration
+sass:
+    style: compressed
+
+# Compress HTML - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  startings: []
+  profile: false
+
+# https://kylewbanks.com/blog/creating-category-pages-in-jekyll-without-plugins
+collections:
+  category:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
